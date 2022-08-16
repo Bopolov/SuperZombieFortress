@@ -683,7 +683,7 @@ void Infected_DoSmokerBeam(int iClient)
 		GetClientAbsOrigin(iHit, vecHitPos);
 		MakeVectorFromPoints(vecOrigin, vecHitPos, vecVelocity);
 		NormalizeVector(vecVelocity, vecVelocity);
-		ScaleVector(vecVelocity, fMin(-450.0 + GetClientHealth(iHit), -10.0) );
+		ScaleVector(vecVelocity, fMin(-650.0 + GetClientHealth(iHit), -10.0) );
 		TeleportEntity(iHit, NULL_VECTOR, NULL_VECTOR, vecVelocity);
 		
 		//If target changed, change stored target AND reset beam hit count
@@ -834,7 +834,7 @@ public void Infected_OnJockeyThink(int iClient, int &iButtons)
 			GetClientEyeAngles(iTarget, vecTargetEye);
 			vecJockeyEye[2] = 0.0;
 			vecTargetEye[2] = 0.0;
-			AnglesToVelocity(vecJockeyEye, vecJockeyVel, flSpeed * 1.00);
+			AnglesToVelocity(vecJockeyEye, vecJockeyVel, flSpeed * 1.20);
 			AnglesToVelocity(vecTargetEye, vecTargetVel, flSpeed * 0.00);
 			
 			AddVectors(vecJockeyVel, vecTargetVel, vecFinalVel);
